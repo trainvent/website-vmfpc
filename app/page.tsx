@@ -1,116 +1,278 @@
 import Image from "next/image";
 
+const nutrientLetters = [
+	{
+		letter: "V",
+		word: "Vitamin",
+		note: "Micronutrient coverage for long-term resilience and complete daily support.",
+	},
+	{
+		letter: "M",
+		word: "Mineral",
+		note: "Electrolytes and essential trace elements in a controlled, measurable format.",
+	},
+	{
+		letter: "F",
+		word: "Fat",
+		note: "Dense energy, satiety, and the fatty acid profile required for complete nutrition.",
+	},
+	{
+		letter: "P",
+		word: "Protein",
+		note: "Functional structure, recovery, and amino acid completeness at scale.",
+	},
+	{
+		letter: "C",
+		word: "Carbohydrate",
+		note: "Accessible energy for daily use, emergency settings, and demanding missions.",
+	},
+];
+
+const applications = [
+	"War zones and humanitarian logistics",
+	"Space travel and extreme-environment operations",
+	"Preparedness, field work, and industrial deployment",
+	"Consumers who want nutrition without complexity",
+];
+
+const collaborationPoints = [
+	"Use the existing AIO-VMP product as the nutritional base.",
+	"Expand it with carbohydrates and any required formulation improvements.",
+	"Engineer a hygienic, manufacturable pellet format for humans.",
+	"Launch the result as AIO-VMFPC or SPACEFOOD.",
+];
+
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<main className="page-shell">
+			<section className="hero">
+				<div className="hero-copy">
+					<p className="eyebrow">VMFPC concept presentation</p>
+					<h1>
+						Complete human nutrition, reimagined as a clean pellet-based product.
+					</h1>
+					<p className="hero-text">
+						VMFPC stands for vitamin, mineral, fat, protein, and carbohydrate:
+						the full nutritional stack in one compact system. The proposal is to
+						turn that principle into a practical, dust-free pellet food designed
+						for severe conditions, efficient logistics, and radically simple
+						daily use.
+					</p>
+					<div className="hero-actions">
+						<a className="button button-primary" href="#proposal">
+							Review proposal
+						</a>
+						<a
+							className="button button-secondary"
+							href="https://www.lemarq.de/produkt/aio-vmp/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							See existing product
+						</a>
+					</div>
+				</div>
 
-      <div className="relative z-[-1] flex flex-col gap-3 place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div>
-          on GitLab Pages
-        </div>
-      </div>
+				<aside className="hero-panel">
+					<a
+						className="company-badge"
+						href="https://trainvent.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<div className="logo-mark logo-mark-hero" aria-hidden="true">
+							<Image
+								src="/LeLogo.svg"
+								alt=""
+								width={84}
+								height={84}
+								priority
+							/>
+						</div>
+						<div>
+							<span className="signal-label">Company reference</span>
+							<strong>trainvent.com</strong>
+						</div>
+					</a>
+					<div className="signal-card">
+						<span className="signal-label">Core idea</span>
+						<strong>Pellet food for humans</strong>
+						<p>
+							Compact, hygienic, shelf-efficient nutrition engineered for
+							transport, storage, and reliable use.
+						</p>
+					</div>
+					<div className="metric-grid">
+						<div>
+							<span>Format</span>
+							<strong>Dust-free pellets</strong>
+						</div>
+						<div>
+							<span>Positioning</span>
+							<strong>Complete food</strong>
+						</div>
+						<div>
+							<span>Starting point</span>
+							<strong>AIO-VMP</strong>
+						</div>
+						<div>
+							<span>Business model</span>
+							<strong>Collaboration</strong>
+						</div>
+					</div>
+				</aside>
+			</section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+			<section className="section">
+				<div className="section-heading">
+					<p className="eyebrow">What VMFPC means</p>
+					<h2>A complete nutritional logic, not just a product name.</h2>
+				</div>
+				<div className="nutrient-grid">
+					{nutrientLetters.map((item) => (
+						<article className="nutrient-card" key={item.letter}>
+							<div className="nutrient-letter">{item.letter}</div>
+							<h3>{item.word}</h3>
+							<p>{item.note}</p>
+						</article>
+					))}
+				</div>
+			</section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+			<section className="section section-accent">
+				<div className="section-heading">
+					<p className="eyebrow">Why pellet form</p>
+					<h2>
+						A complete food pellet could solve logistics, cleanliness, and ease
+						of use in one move.
+					</h2>
+				</div>
+				<div className="two-column">
+					<div className="statement-card">
+						<p className="quote">
+							“How would you feel about producing a complete food in pellet form
+							for humans?”
+						</p>
+						<p>
+							For war zones, space travel, or people who want radically
+							uncomplicated nutrition, pellet form has obvious operational
+							advantages: less dust, better packing density, cleaner handling,
+							and a strong identity as a purpose-built food system.
+						</p>
+					</div>
+					<div className="list-card">
+						<h3>Best-fit use cases</h3>
+						<ul>
+							{applications.map((item) => (
+								<li key={item}>{item}</li>
+							))}
+						</ul>
+					</div>
+				</div>
+			</section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+			<section className="section">
+				<div className="section-heading">
+					<p className="eyebrow">Proof of intent</p>
+					<h2>The concept already has a real nutritional starting point.</h2>
+				</div>
+				<div className="two-column">
+					<div className="story-card">
+						<h3>What has already been tried</h3>
+						<p>
+							Initial self-driven attempts showed real interest in the concept,
+							but also exposed the technical barrier: pellet machinery clogged,
+							hygiene standards were difficult to maintain, and the process
+							clearly needs industrial expertise.
+						</p>
+					</div>
+					<div className="story-card">
+						<h3>Existing product foundation</h3>
+						<p>
+							The current AIO-VMP protein drink demonstrates practical progress
+							toward the broader vision. It provides a credible base for a more
+							complete formulation rather than starting from zero.
+						</p>
+						<a
+							className="text-link"
+							href="https://www.lemarq.de/produkt/aio-vmp/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							Visit the current AIO-VMP product
+						</a>
+					</div>
+				</div>
+				<div className="reference-strip">
+					<div className="reference-brand">
+						<div className="logo-mark logo-mark-reference" aria-hidden="true">
+							<Image src="/LeLogo.svg" alt="" width={88} height={88} />
+						</div>
+						<div>
+							<h3>Trainvent company reference</h3>
+							<p>
+								For potential supporting companies, the broader company context
+								can be reviewed via the main website.
+							</p>
+						</div>
+					</div>
+					<a
+						className="button button-secondary reference-link"
+						href="https://trainvent.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Visit trainvent.com
+					</a>
+				</div>
+			</section>
 
-        <a
-          href="https://docs.gitlab.com/ee/user/project/pages/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Learn more about deploying your site with GitLab Pages.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+			<section className="section" id="proposal">
+				<div className="section-heading">
+					<p className="eyebrow">Collaboration proposal</p>
+					<h2>
+						Build the next version together and take it to market as a premium
+						complete-food system.
+					</h2>
+				</div>
+				<div className="proposal-layout">
+					<div className="proposal-card">
+						<h3>Suggested development path</h3>
+						<ul>
+							{collaborationPoints.map((item) => (
+								<li key={item}>{item}</li>
+							))}
+						</ul>
+					</div>
+
+					<div className="terms-card">
+						<span className="eyebrow">Partnership terms</span>
+						<p className="terms-highlight">10% profit participation</p>
+						<p>
+							The proposal is a collaboration model: co-develop the product,
+							bring it to market with the right production know-how, and credit
+							the originator as a named collaboration partner.
+						</p>
+						<div className="name-options">
+							<span>AIO-VMFPC</span>
+							<span>SPACEFOOD</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="closing-panel">
+				<p className="eyebrow">Positioning</p>
+				<h2>
+					This is not a novelty snack. It is a credible complete-food platform
+					for companies that can execute formulation, hygiene, and scale.
+				</h2>
+				<p>
+					The opportunity is to convert a strong idea and an existing nutritional
+					base into a differentiated product with humanitarian, industrial, and
+					consumer relevance.
+				</p>
+			</section>
+		</main>
+	);
 }
