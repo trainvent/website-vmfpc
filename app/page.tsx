@@ -1,45 +1,50 @@
-import Image from "next/image";
-
-const nutrientLetters = [
+const automationPillars = [
+	{
+		letter: "B",
+		word: "Build",
+		note: "Compile the static Next.js site the same way every time, locally and in CI.",
+	},
+	{
+		letter: "T",
+		word: "Test",
+		note: "Create a clean place for linting, type checks, and future quality gates.",
+	},
+	{
+		letter: "D",
+		word: "Deploy",
+		note: "Publish the exported site to GitHub Pages directly from the repository.",
+	},
 	{
 		letter: "V",
-		word: "Vitamin",
-		note: "Micronutrient coverage for long-term resilience and complete daily support.",
+		word: "Visibility",
+		note: "Keep deployment status, logs, and artifacts visible where the code now lives.",
 	},
 	{
-		letter: "M",
-		word: "Mineral",
-		note: "Electrolytes and essential trace elements in a controlled, measurable format.",
-	},
-	{
-		letter: "F",
-		word: "Fat",
-		note: "Dense energy, satiety, and the fatty acid profile required for complete nutrition.",
-	},
-	{
-		letter: "P",
-		word: "Protein",
-		note: "Functional structure, recovery, and amino acid completeness at scale.",
-	},
-	{
-		letter: "C",
-		word: "Carbohydrate",
-		note: "Accessible energy for daily use, emergency settings, and demanding missions.",
+		letter: "O",
+		word: "Ownership",
+		note: "Move source control and delivery into one workflow the team can maintain together.",
 	},
 ];
 
-const applications = [
-	"War zones and humanitarian logistics",
-	"Space travel and extreme-environment operations",
-	"Preparedness, field work, and industrial deployment",
-	"Consumers who want nutrition without complexity",
+const migrationWins = [
+	"Legacy Pages boilerplate removed from the repo",
+	"Homepage rewritten to explain the new GitHub Actions setup",
+	"Static export configured for GitHub Pages deployments",
+	"Deployment workflow added under .github/workflows",
 ];
 
-const collaborationPoints = [
-	"Use the existing AIO-VMP product as the nutritional base.",
-	"Expand it with carbohydrates and any required formulation improvements.",
-	"Engineer a hygienic, manufacturable pellet format for humans.",
-	"Launch the result as AIO-VMFPC or SPACEFOOD.",
+const cleanupItems = [
+	"Old CI references removed from the README and site copy",
+	"Next.js config updated for GitHub-hosted static deployments",
+	"Build artifact prepared for Pages with a .nojekyll marker",
+	"Repository now has a clear path from push to published page",
+];
+
+const workflowSteps = [
+	"Checkout the repository on every push to main or manual dispatch",
+	"Install dependencies with npm ci and build the static Next.js export",
+	"Upload the out/ directory as the GitHub Pages artifact",
+	"Deploy the artifact with the official Pages deploy action",
 ];
 
 export default function Home() {
@@ -47,77 +52,59 @@ export default function Home() {
 		<main className="page-shell">
 			<section className="hero">
 				<div className="hero-copy">
-					<p className="eyebrow">VMFPC concept presentation</p>
-					<h1>
-						Complete human nutrition, reimagined as a clean pellet-based product.
-					</h1>
+					<p className="eyebrow">GitHub migration</p>
+					<h1>GitHub Actions now runs the page.</h1>
 					<p className="hero-text">
-						VMFPC stands for vitamin, mineral, fat, protein, and carbohydrate:
-						the full nutritional stack in one compact system. The proposal is to
-						turn that principle into a practical, dust-free pellet food designed
-						for severe conditions, efficient logistics, and radically simple
-						daily use.
+						This site has been reshaped around the move to GitHub. The repo now
+						centers on GitHub Actions for build and deployment, so the code,
+						automation, and Pages release flow all live in one place.
 					</p>
 					<div className="hero-actions">
-						<a className="button button-primary" href="#proposal">
-							Review proposal
+						<a className="button button-primary" href="#workflow">
+							View workflow plan
 						</a>
 						<a
 							className="button button-secondary"
-							href="https://www.lemarq.de/produkt/aio-vmp/"
+							href="https://docs.github.com/actions"
 							target="_blank"
 							rel="noreferrer"
 						>
-							See existing product
+							GitHub Actions docs
 						</a>
 					</div>
 				</div>
 
 				<aside className="hero-panel">
-					<a
-						className="company-badge"
-						href="https://trainvent.com"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<div className="logo-mark logo-mark-hero" aria-hidden="true">
-							<Image
-								src="/LeLogo.svg"
-								alt=""
-								width={84}
-								height={84}
-								priority
-							/>
-						</div>
+					<div className="company-badge">
 						<div>
-							<span className="signal-label">Company reference</span>
-							<strong>trainvent.com</strong>
+							<span className="signal-label">Platform</span>
+							<strong>GitHub + GitHub Pages</strong>
 						</div>
-					</a>
+					</div>
 					<div className="signal-card">
-						<span className="signal-label">Core idea</span>
-						<strong>Pellet food for humans</strong>
+						<span className="signal-label">Deployment target</span>
+						<strong>Static Next.js export</strong>
 						<p>
-							Compact, hygienic, shelf-efficient nutrition engineered for
-							transport, storage, and reliable use.
+							The app builds to <code>out/</code> and ships through the official
+							GitHub Pages workflow actions.
 						</p>
 					</div>
 					<div className="metric-grid">
 						<div>
-							<span>Format</span>
-							<strong>Dust-free pellets</strong>
+							<span>Trigger</span>
+							<strong>`push` to `main`</strong>
 						</div>
 						<div>
-							<span>Positioning</span>
-							<strong>Complete food</strong>
+							<span>Manual run</span>
+							<strong>`workflow_dispatch`</strong>
 						</div>
 						<div>
-							<span>Starting point</span>
-							<strong>AIO-VMP</strong>
+							<span>Artifact</span>
+							<strong>`out/` upload</strong>
 						</div>
 						<div>
-							<span>Business model</span>
-							<strong>Collaboration</strong>
+							<span>Publish step</span>
+							<strong>Pages deploy</strong>
 						</div>
 					</div>
 				</aside>
@@ -125,11 +112,11 @@ export default function Home() {
 
 			<section className="section">
 				<div className="section-heading">
-					<p className="eyebrow">What VMFPC means</p>
-					<h2>A complete nutritional logic, not just a product name.</h2>
+					<p className="eyebrow">What changed</p>
+					<h2>The site now explains the GitHub Actions workflow instead of the previous deployment setup.</h2>
 				</div>
 				<div className="nutrient-grid">
-					{nutrientLetters.map((item) => (
+					{automationPillars.map((item) => (
 						<article className="nutrient-card" key={item.letter}>
 							<div className="nutrient-letter">{item.letter}</div>
 							<h3>{item.word}</h3>
@@ -141,29 +128,22 @@ export default function Home() {
 
 			<section className="section section-accent">
 				<div className="section-heading">
-					<p className="eyebrow">Why pellet form</p>
-					<h2>
-						A complete food pellet could solve logistics, cleanliness, and ease
-						of use in one move.
-					</h2>
+					<p className="eyebrow">Why GitHub Actions</p>
+					<h2>One repository, one automation layer, one visible release path.</h2>
 				</div>
 				<div className="two-column">
 					<div className="statement-card">
-						<p className="quote">
-							“How would you feel about producing a complete food in pellet form
-							for humans?”
-						</p>
+						<p className="quote">Push, build, upload, deploy.</p>
 						<p>
-							For war zones, space travel, or people who want radically
-							uncomplicated nutrition, pellet form has obvious operational
-							advantages: less dust, better packing density, cleaner handling,
-							and a strong identity as a purpose-built food system.
+							The new setup keeps the deployment story simple. Code changes land
+							in GitHub, the workflow produces the static site, and GitHub Pages
+							publishes the result without any platform split or extra glue.
 						</p>
 					</div>
 					<div className="list-card">
-						<h3>Best-fit use cases</h3>
+						<h3>Immediate wins</h3>
 						<ul>
-							{applications.map((item) => (
+							{migrationWins.map((item) => (
 								<li key={item}>{item}</li>
 							))}
 						</ul>
@@ -173,104 +153,91 @@ export default function Home() {
 
 			<section className="section">
 				<div className="section-heading">
-					<p className="eyebrow">Proof of intent</p>
-					<h2>The concept already has a real nutritional starting point.</h2>
+					<p className="eyebrow">Repository cleanup</p>
+					<h2>The old deployment footprint is gone from the docs, config comments, and page narrative.</h2>
 				</div>
 				<div className="two-column">
 					<div className="story-card">
-						<h3>What has already been tried</h3>
+						<h3>What was removed</h3>
 						<p>
-							Initial self-driven attempts showed real interest in the concept,
-							but also exposed the technical barrier: pellet machinery clogged,
-							hygiene standards were difficult to maintain, and the process
-							clearly needs industrial expertise.
+							Legacy Pages boilerplate and outdated references were stripped out
+							so the project no longer points people toward the retired setup.
 						</p>
 					</div>
 					<div className="story-card">
-						<h3>Existing product foundation</h3>
+						<h3>What replaced it</h3>
 						<p>
-							The current AIO-VMP protein drink demonstrates practical progress
-							toward the broader vision. It provides a credible base for a more
-							complete formulation rather than starting from zero.
+							GitHub-focused setup notes, a Pages deployment workflow, and a
+							homepage that explains the current automation model.
 						</p>
 						<a
 							className="text-link"
-							href="https://www.lemarq.de/produkt/aio-vmp/"
+							href="https://docs.github.com/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages"
 							target="_blank"
 							rel="noreferrer"
 						>
-							Visit the current AIO-VMP product
+							Read the GitHub Pages workflow guide
 						</a>
 					</div>
 				</div>
 				<div className="reference-strip">
 					<div className="reference-brand">
-						<div className="logo-mark logo-mark-reference" aria-hidden="true">
-							<Image src="/LeLogo.svg" alt="" width={88} height={88} />
-						</div>
 						<div>
-							<h3>Trainvent company reference</h3>
+							<h3>Migration checklist</h3>
 							<p>
-								For potential supporting companies, the broader company context
-								can be reviewed via the main website.
+								The repository is now aligned around GitHub-native deployment
+								instead of the old Pages conventions.
 							</p>
 						</div>
 					</div>
 					<a
 						className="button button-secondary reference-link"
-						href="https://trainvent.com"
+						href="https://docs.github.com/actions/deployment/deploying-to-your-cloud-provider/deploying-static-content-to-pages"
 						target="_blank"
 						rel="noreferrer"
 					>
-						Visit trainvent.com
+						Pages deployment docs
 					</a>
 				</div>
 			</section>
 
-			<section className="section" id="proposal">
+			<section className="section" id="workflow">
 				<div className="section-heading">
-					<p className="eyebrow">Collaboration proposal</p>
-					<h2>
-						Build the next version together and take it to market as a premium
-						complete-food system.
-					</h2>
+					<p className="eyebrow">Workflow</p>
+					<h2>GitHub Actions now carries the repo from commit to published page.</h2>
 				</div>
 				<div className="proposal-layout">
 					<div className="proposal-card">
-						<h3>Suggested development path</h3>
+						<h3>Deployment flow</h3>
 						<ul>
-							{collaborationPoints.map((item) => (
+							{workflowSteps.map((item) => (
 								<li key={item}>{item}</li>
 							))}
 						</ul>
 					</div>
 
 					<div className="terms-card">
-						<span className="eyebrow">Partnership terms</span>
-						<p className="terms-highlight">10% profit participation</p>
+						<span className="eyebrow">Status</span>
+						<p className="terms-highlight">Pages-ready</p>
 						<p>
-							The proposal is a collaboration model: co-develop the product,
-							bring it to market with the right production know-how, and credit
-							the originator as a named collaboration partner.
+							The repo is set up for a GitHub Actions based Pages deployment and
+							the app build already succeeds as a static export.
 						</p>
 						<div className="name-options">
-							<span>AIO-VMFPC</span>
-							<span>SPACEFOOD</span>
+							{cleanupItems.map((item) => (
+								<span key={item}>{item}</span>
+							))}
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<section className="closing-panel">
-				<p className="eyebrow">Positioning</p>
-				<h2>
-					This is not a novelty snack. It is a credible complete-food platform
-					for companies that can execute formulation, hygiene, and scale.
-				</h2>
+				<p className="eyebrow">Outcome</p>
+				<h2>The project now reads and behaves like a GitHub Pages app powered by GitHub Actions.</h2>
 				<p>
-					The opportunity is to convert a strong idea and an existing nutritional
-					base into a differentiated product with humanitarian, industrial, and
-					consumer relevance.
+					That means less migration confusion, cleaner onboarding, and a deployment
+					setup that matches where the repository actually lives today.
 				</p>
 			</section>
 		</main>

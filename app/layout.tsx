@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "VMFPC | Complete Food Pellet Concept",
-  description:
-    "A sponsor-facing concept site for VMFPC: vitamin, mineral, fat, protein, carbohydrate in a compact pellet-based complete food system.",
+	title: "GitHub Actions | Pages Deployment",
+	description:
+		"A GitHub Actions-focused landing page for this repository's new GitHub Pages deployment flow.",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body>{children}</body>
+		</html>
+	);
 }
